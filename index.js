@@ -55,3 +55,18 @@ gitDescribe(__dirname, {
         return console.error(err);
     console.log("gitInfo", gitInfo);
 });
+
+
+var info = gitDescribeSync(__dirname, {
+  match: "*[0-9].[0-9].[0-9]*",
+  customArguments: [
+    "--match",
+    "*[0-9][0-9].[0-9].[0-9]*",
+    "--match",
+    "*[0-9].[0-9][0-9].[0-9]*",
+    "--match",
+    "*[0-9][0-9].[0-9][0-9].[0-9]*",
+  ],
+}); 
+
+console.log(info)
