@@ -36,7 +36,7 @@ gitDescribe(__dirname, {
     "*[0-9][0-9].[0-9][0-9].[0-9]*",
   ],
 })
-  .then((gitInfo) => console.dir("gitInfo11", gitInfo);)
+  .then((gitInfo) => console.dir("gitInfo11", gitInfo))
   .catch((err) => console.error(err));
 
 
