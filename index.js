@@ -21,7 +21,7 @@ var gitInfo = gitDescribeSync({
 gitDescribe(__dirname, (err, gitInfo) => {
     if (err)
         return console.error(err);
-    console.dir(gitInfo);
+    console.dir("gitInfo12", gitInfo);
 });
 
 // Asynchronous with promise
@@ -36,7 +36,7 @@ gitDescribe(__dirname, {
     "*[0-9][0-9].[0-9][0-9].[0-9]*",
   ],
 })
-  .then((gitInfo) => console.dir(gitInfo))
+  .then((gitInfo) => console.dir("gitInfo11", gitInfo);)
   .catch((err) => console.error(err));
 
 
@@ -53,5 +53,5 @@ gitDescribe(__dirname, {
 },(err, gitInfo) => {
     if (err)
         return console.error(err);
-    console.dir(gitInfo);
+    console.dir("gitInfo", gitInfo);
 });
