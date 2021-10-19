@@ -18,6 +18,12 @@ var gitInfo = gitDescribeSync({
   customArguments: ["--abbrev=16"],
 });
 
+gitDescribe(__dirname, (err, gitInfo) => {
+    if (err)
+        return console.error(err);
+    console.dir(gitInfo);
+});
+
 // Asynchronous with promise
 gitDescribe(__dirname, {
   match: "*[0-9].[0-9].[0-9]*",
@@ -32,3 +38,20 @@ gitDescribe(__dirname, {
 })
   .then((gitInfo) => console.dir(gitInfo))
   .catch((err) => console.error(err));
+
+
+gitDescribe(__dirname, {
+  match: "*[0-9].[0-9].[0-9]*",
+  customArguments: [
+    "--match",
+    "*[0-9][0-9].[0-9].[0-9]*",
+    "--match",
+    "*[0-9].[0-9][0-9].[0-9]*",
+    "--match",
+    "*[0-9][0-9].[0-9][0-9].[0-9]*",
+  ],
+},(err, gitInfo) => {
+    if (err)
+        return console.error(err);
+    console.dir(gitInfo);
+});
